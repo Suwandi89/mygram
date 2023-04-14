@@ -4,19 +4,21 @@ import (
 	"fmt"
 	"log"
 	"mygram/models"
+	"os"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
 var (
-	host     = "localhost"
-	user     = "postgres"
-	password = "root"
-	dbPort   = "5432"
-	dbname   = "mygram"
-	db       *gorm.DB
-	err      error
+	host       = os.Getenv("DB_HOST")
+	user       = os.Getenv("DB_USER")
+	password   = os.Getenv("DB_PASSWORD")
+	dbPort     = os.Getenv("DB_PORT")
+	dbname     = os.Getenv("DB_NAME")
+	debug_mode = os.Getenv("DEBUG_MODE")
+	db         *gorm.DB
+	err        error
 )
 
 func StartDB() {
@@ -29,6 +31,10 @@ func StartDB() {
 	}
 
 	fmt.Println("Sukses koneksi ke database")
+	if debug_mode == "true" {
+		db.Debug().AutoMigrate(models.User{}, models.Photo{}, models.Comment{}, models.SocialMedia{})
+	}
+
 	db.Debug().AutoMigrate(models.User{}, models.Photo{}, models.Comment{}, models.SocialMedia{})
 
 }

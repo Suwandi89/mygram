@@ -24,7 +24,7 @@ import (
 // @in header
 // @name Authorization
 // @license.url http://www.apache.org/licenses/license-2.0.html
-// @host localhost:8080
+// @host mygram-production-346e.up.railway.app
 // @BasePath /
 func StartApp() *gin.Engine {
 	r := gin.Default()
