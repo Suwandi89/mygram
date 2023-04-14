@@ -3,7 +3,10 @@
 Suwandi Kurniawan - 1955617840-1140
 
 ## Project name :
-MyGram API v1.0
+MyGram API v1.
+
+## Deployed to :
+`mygram-production-346e.up.railway.app`
 
 ### Features :
 - **Register User** [/users/register]
