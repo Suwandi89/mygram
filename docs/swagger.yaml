@@ -95,7 +95,7 @@ info:
   title: Mygram API
   version: "1.0"
 paths:
-  /comments/create:
+  /comments/create/{photoId}:
     post:
       consumes:
       - application/json

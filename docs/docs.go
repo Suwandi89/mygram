@@ -23,7 +23,7 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/comments/create": {
+        "/comments/create/{photoId}": {
             "post": {
                 "security": [
                     {
